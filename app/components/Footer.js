@@ -9,9 +9,9 @@ const Tab = createBottomTabNavigator();
 const Footer = ({ navigation }) => {
   return (
     <View style={styles.bottomContainer}>
-      <Image style={tw``} source={require('../assets/home.png')}></Image>
-      <Image style={tw``} source={require('../assets/map.png')}></Image>
-      <Image style={tw``} source={require('../assets/settings.png')}></Image>
+      <Image style={tw``} source={require('../assets/')}></Image>
+      <Image style={tw``} source={require('../assets/')}></Image>
+      <Image style={tw``} source={require('../assets/')}></Image>
     </View>
   );
 }

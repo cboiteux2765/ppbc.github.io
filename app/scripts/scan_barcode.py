@@ -1,5 +1,6 @@
 from pyzbar import pyzbar
 import cv2 as cv
+from glob import glob
 
 def decode(image):
     # decodes all barcodes from an image
@@ -26,8 +27,16 @@ def draw_barcode(decoded, image):
                             thickness=5)
     return image
 
+def scan_barcode():
+    capture = cv.VideoCapture(0)
+    while capture.isOpened():
+        ret, frame = capture.read()
+
+        if not ret:
+            print("Nothing")
+            break
+
 if __name__ == "__main__":
-    from glob import glob
 
     barcodes = glob("barcode*.png")
     for barcode_file in barcodes:
