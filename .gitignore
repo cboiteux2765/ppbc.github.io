@@ -1,10 +1,5 @@
-/automation.py
-/automation.sh
-/data.json
-/htmltojson.js
-/index.html
-/qrcode.py
-/README.md
-/resources.txt
-/service_account.json
-/task.txt
+# exclude everything
+/*
+
+# exception to the rule
+!/.gitkeep 
