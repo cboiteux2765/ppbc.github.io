@@ -10,6 +10,7 @@ def read_qr_code():
 def get_google_sheet():
     gc = gspread.service_account(filename='service_account.json')
     sheet = gc.open('Inventory')
+    return sheet
 
 def update_sheet(data):
     sheet = get_google_sheet()
