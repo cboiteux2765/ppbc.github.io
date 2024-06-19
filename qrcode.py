@@ -2,6 +2,12 @@ import qreader
 import gspread
 
 # QR code contains the data of the item
+
+
+qr = qreader.QRCodeWriter()
+qr.encode('https://docs.google.com/spreadsheets/d/18WtEVH14YbyUWgkUwkjoFihb9zREhAnDKUEWWyV3zrM/edit')
+qr.save('qr_code.png')
+
 def read_qr_code():
     qr = qreader.QRCodeReader()
     qr.decode('qr_code.png')
@@ -16,11 +22,10 @@ def update_sheet(data):
     sheet = get_google_sheet()
     # if the sheet does not contain the entry already
     
-    sheet.values_append('Sheet1', {'values': [data]})
-
-    # else update the existing entry
-
-    sheet.values_update('Sheet1', sheet.find(data), {'values': [data]})
+    if not sheet.find(data):
+        sheet.values_append('Sheet1', {'values': [data]})
+    else:
+        sheet.values_update('Sheet1', sheet.find(data), {'values': [data]})
 
 if __name__ == '__main__':
     get_google_sheet()
