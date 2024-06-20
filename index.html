@@ -4,97 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glovebox Report</title>
-    <script defer src="htmltojson.js"></script>
 </head>
 <body>
     <h1>Glovebox Report</h1>
 
-    <button id="submit">Submit</button> <br> <br>
-    <form method="post" action="https://script.google.com/macros/s/AKfycbxzfSQh4xwl6nEhju84mSbjWcyLf8BUJZ2_Ul_1q3Oi6Ei_9w6xKNoOosmJyEdjgKfY/exec">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbxWsPh0FtkxjLQ3IIPm2f1J7CQoA8Rb_UyEBoXYkm4I3TBzUTIhIHGkh_sgZPMOb2UB/exec">
         <label>Date</label>
-        <input id="date" type="date" name="date" required>
+        <input type="date" name="date" required>
         <br>
     
         <label>Time</label>
-        <input id="time" type="time" name="by" required>
+        <input type="time" name="time" required>
         <br>
     
         <label>By</label>
-        <input id="by" type="text" name="by" required>
+        <input type="text" name="by" required>
         <br> <br>
 
-        <button onClick="addGlovebox()">Add Glovebox</button>
-        <script>
-            // problem here!
-            function addGlovebox() { 
-                var div = document.createElement('div');
-                div.innerHTML = document.querySelector('.glovebox').innerHTML;
-                document.body.appendChild(div);
-            }
-        </script> <br>
-    
-        <div class="glovebox">
-            <h2>Glovebox</h2>
-            <select name="glovebox">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="F">F</option>
-                <option value="Vac Large">Vac Large</option>
-                <option value="Vac Small">Vac Small</option>
-                <option value="Old Nexus">Old Nexus</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="H">H</option>
-                <option value="G">G</option>
-                <option value="J">J</option>
-                <option value="K">K</option>
-                <option value="L">L</option>
-                <option value="M">M</option>
-                <option value="N">N</option>
-            </select>
-            <br>
         
-            <label>Mfg.</label>
-            <select name="mfg" id="mfg">
-                <option value="mbraun">Mbraun</option>
-                <option value="vac">VAC</option>
-                <option value="vti">VTI</option>
-                <option value="LC Tech">LC Tech</option>
-            </select>
-            <br>
-        
-            <h3>H2O</h3>
-            <label>Display, Illinois, Shaw, Michael</label>
-            <input name="H2O" required>
-            <br>
-        
-            <h3>O2</h3>
-            <label>Display, Illinois</label>
-            <input name="O2" required>
-            <br>
-            
-            <label>Purifier</label>
-            <select name="purifier" id="purifier">
-                <option value="single">Single</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="B">B</option>
-            </select>
-            <br>
-        
-            <label>LMF</label>
-            <select name="lmf">
-                <option value="Single">Single</option>
-                <option value="No LMF">No LMF</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
-            <br>
-        
-            <label>Notes</label>
-            <textarea name="notes"></textarea>
-            <br> <br>
-        </div>
+        <label>Notes</label>
+        <textarea name="notes"></textarea>
+        <br> <br>
+
+        <input type="submit" value="Submit" id="submit">
     </form>
 </body>
 </html>
