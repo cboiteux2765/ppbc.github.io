@@ -1,7 +1,15 @@
 import qreader
 import gspread
+import pandas as pd
 
 # QR code contains the data of the item
+
+df = pd.read_csv('Gas_Inventory.csv')
+
+for i in range(0, len(df)):
+    qr = qreader.QRCodeWriter()
+    qr.encode(df.iloc[i]['QR Code'])
+    qr.save(f'qr_code{i}.png')
 
 
 qr = qreader.QRCodeWriter()
